@@ -9,6 +9,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { UserInfoComponent } from './auth/user-info/user-info.component';
 import { UserLoginComponent } from './auth/user-login/user-login.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { UserLoginComponent } from './auth/user-login/user-login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
