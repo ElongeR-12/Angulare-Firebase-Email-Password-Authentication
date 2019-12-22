@@ -14,4 +14,32 @@ export class AuthService {
       this.authState = auth
     });
    }
+
+
+   signUpWithEmail(email: string, password: string) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((user) => {
+        this.authState = user
+      })
+      .catch(error => {
+        console.log(error)
+        throw error
+      });
+  }
+ 
+  loginWithEmail(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        this.authState = user
+      })
+      .catch(error => {
+        console.log(error)
+        throw error
+      });
+  }
+ 
+  signOut(): void {
+    this.afAuth.auth.signOut()
+    .then((router) => {this.router.navigate(['/'])});
+  }
 }
