@@ -1,8 +1,8 @@
 ## install firbase and angularfire
 $npm install @angular/fire firebase --save (https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md)
 
-## sign up, log in and log out methods
-use:
+## sign up, log in and log out methods 
+use: (https://firebase.google.com/docs/auth/web/password-auth)
 + AngularFireAuth.auth.createUserWithEmailAndPassword() to sign up new account.
 + AngularFireAuth.auth.signInWithEmailAndPassword() to log in.
 + AngularFireAuth.auth.signOut() to log out.
