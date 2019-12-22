@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -8,9 +9,15 @@ import { AuthService } from '../auth.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  isNewUser = true;
+  
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  changeForm() {
+    this.isNewUser = !this.isNewUser
   }
 
 }

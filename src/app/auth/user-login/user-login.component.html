@@ -1,5 +1,5 @@
 <div >
-    <div style="width: 350px;" >
+    <div style="width: 350px;" *ngIf="isNewUser">
    
       <form >
         <div class="form-group">
@@ -15,10 +15,10 @@
         <button type="submit" class="btn btn-success">Register</button>
       </form>
    
-      <h4 class="text-primary" >Log In if you have already any Account/ or register a new User here</h4>
+      <h4 class="text-primary" (click)="changeForm()">Log In if you have already any Account/ or register a new User here</h4>
     </div>
    
-    <div style="width: 350px;">
+    <div style="width: 350px;" *ngIf="!isNewUser">
    
      
    
@@ -36,7 +36,7 @@
         <button type="submit" class="btn btn-success">Log In</button>
       </form>
    
-      <h4 class="text-primary" >Register if you don't have any Account yet</h4>
+      <h4 class="text-primary" (click)="changeForm()">Register if you don't have any Account yet</h4>
 
    
     </div>
