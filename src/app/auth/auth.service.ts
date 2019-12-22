@@ -9,6 +9,7 @@ export class AuthService {
 
   authState: any = null;//when loug out, contains useful User Information (UID, Display Name, Photo URL…) when logging in
 
+
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.authState.subscribe((auth) => {
       this.authState = auth
@@ -27,6 +28,18 @@ export class AuthService {
     return (this.authState !== null) ? this.authState : null;
   }
 
+
+  get isUserAnonymousLoggedIn(): boolean {
+      return (this.authState !== null) ? this.authState.isAnonymous : false
+    }
+    
+  get isUserEmailLoggedIn(): boolean {
+    if ((this.authState !== null) && (!this.isUserAnonymousLoggedIn)) {
+      return true
+    } else {
+      return false
+    }
+  }
    signUpWithEmail(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
