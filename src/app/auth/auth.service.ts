@@ -7,5 +7,11 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) { }
+  authState: any = null;//when loug out, contains useful User Information (UID, Display Name, Photo URL…) when logging in
+
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
+    this.afAuth.authState.subscribe((auth) => {
+      this.authState = auth
+    });
+   }
 }
