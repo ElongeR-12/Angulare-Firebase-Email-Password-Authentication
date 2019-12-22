@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { UserInfoComponent } from './auth/user-info/user-info.component';
+import { UserLoginComponent } from './auth/user-login/user-login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserInfoComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
