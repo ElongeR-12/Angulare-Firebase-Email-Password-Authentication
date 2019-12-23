@@ -1,1 +1,10 @@
-<p>user-info works!</p>
+<div *ngIf="authService.currentUser">
+    <h5 class="text-primary">Your Identification Info</h5>
+    <h4>
+      <strong>UID:</strong> {{ authService.currentUserId }}
+    </h4>
+    <h4>
+      <strong>Email:</strong> {{ authService.currentUserName }}
+    </h4>
+    <button class="button" (click)="logout()">Logout</button>
+</div>

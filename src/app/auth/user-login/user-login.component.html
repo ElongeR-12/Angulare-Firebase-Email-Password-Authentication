@@ -5,7 +5,7 @@
             {{errorMessage}}</p>
        
         <p *ngIf="error.message.length > 0" class="text-danger">
-            {{error.name}}</p>      
+            {{error.message}}</p>      
    
       <form  (ngSubmit)="onSignUp()">
         <div class="form-group">
@@ -29,7 +29,7 @@
             {{errorMessage}}</p>
        
         <p *ngIf="error.message.length > 0" class="text-danger">
-            {{error.name}}</p>
+            {{error.message}}</p>
     
       <form (ngSubmit)="onLoginEmail()">
         <div class="form-group">
