@@ -25,7 +25,8 @@ export class UserLoginComponent implements OnInit {
   }
 
   withoutErrorMessage() {
-    
+    this.errorMessage = '';
+    this.error = { name: '', message: '' };
   }
 
   onSignUp(): void {
@@ -56,7 +57,24 @@ export class UserLoginComponent implements OnInit {
   }
 
   validateForm(email: string, password: string): boolean {
-    // validate this.errorMessage
+    if (email.length === 0) {
+      this.errorMessage = 'Please enter Email!'
+      return false
+    }
+ 
+    if (password.length === 0) {
+      this.errorMessage = 'Please enter Password!'
+      return false
+    }
+ 
+    if (password.length < 6) {
+      this.errorMessage = 'Password should be at least 6 characters!'
+      return false
+    }
+ 
+    this.errorMessage = ''
+ 
+    return true
   }
 
 }

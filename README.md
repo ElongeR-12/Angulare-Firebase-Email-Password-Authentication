@@ -6,3 +6,7 @@ use: (https://firebase.google.com/docs/auth/web/password-auth)
 + AngularFireAuth.auth.createUserWithEmailAndPassword() to sign up new account.
 + AngularFireAuth.auth.signInWithEmailAndPassword() to log in.
 + AngularFireAuth.auth.signOut() to log out.
+
+## onLoginEmail and onSignUp method with two validation
+calling AuthService using validateForm()
+after AuthService throws an error using firebase.Thenable.catch()
