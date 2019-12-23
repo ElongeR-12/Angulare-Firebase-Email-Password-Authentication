@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 export class UserLoginComponent implements OnInit {
 
   isNewUser = true;
-  
+  email = '';
+  password = '';
+  errorMessage = '';
+  error: { name: string, message: string } = { name: '', message: '' };
+
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -18,6 +22,41 @@ export class UserLoginComponent implements OnInit {
 
   changeForm() {
     this.isNewUser = !this.isNewUser
+  }
+
+  withoutErrorMessage() {
+    
+  }
+
+  onSignUp(): void {
+    this.withoutErrorMessage()
+ 
+    if (this.validateForm(this.email, this.password)) {
+      this.authService.signUpWithEmail(this.email, this.password)
+        .then(() => {
+          this.router.navigate(['/user'])
+        }).catch(_error => {
+          this.error = _error
+          this.router.navigate(['/'])
+        })
+    }
+  }
+ 
+  onLoginEmail(): void {
+    this.withoutErrorMessage()
+ 
+    if (this.validateForm(this.email, this.password)) {
+      this.authService.loginWithEmail(this.email, this.password)
+        .then(() => this.router.navigate(['/user']))
+        .catch(_error => {
+          this.error = _error
+          this.router.navigate(['/'])
+        })
+    }
+  }
+
+  validateForm(email: string, password: string): boolean {
+    // validate this.errorMessage
   }
 
 }

@@ -1,5 +1,11 @@
 <div >
     <div style="width: 350px;" *ngIf="isNewUser">
+
+        <p *ngIf="errorMessage.length > 0" class="text-danger">
+            {{errorMessage}}</p>
+       
+        <p *ngIf="error.message.length > 0" class="text-danger">
+            {{error.name}}</p>      
    
       <form >
         <div class="form-group">
@@ -19,9 +25,12 @@
     </div>
    
     <div style="width: 350px;" *ngIf="!isNewUser">
-   
-     
-   
+        <p *ngIf="errorMessage.length > 0" class="text-danger">
+            {{errorMessage}}</p>
+       
+        <p *ngIf="error.message.length > 0" class="text-danger">
+            {{error.name}}</p>
+    
       <form >
         <div class="form-group">
           <label for="email">Email</label>
