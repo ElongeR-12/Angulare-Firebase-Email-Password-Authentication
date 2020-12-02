@@ -1,3 +1,12 @@
 .text-size {
     font-size: 2rem;
 }
+
+.logout-btn{
+    background-color: #fbb710;
+    color: white;
+    border-color: #fbb710;
+    margin-top:30px;
+    font-size: large;
+    font-weight: bolder;
+}
