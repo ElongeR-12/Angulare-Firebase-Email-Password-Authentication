@@ -1,10 +1,13 @@
-<div *ngIf="authService.currentUser">
-    <h5 class="text-primary">Your Identification Info</h5>
-    <h4>
+<div class="d-flex justify-content-center" *ngIf="authService.currentUser">
+  <div class="justify-content-center mx-auto w-50 my-5 p-5">
+    <h5 class="text-primary text-center py-5 text-size font-weight-bold">Your Identification Info</h5>
+    <h4 class="text-center text-size">
       <strong>UID:</strong> {{ authService.currentUserId }}
     </h4>
-    <h4>
+    <h4 class="py-3 text-center text-size">
       <strong>Email:</strong> {{ authService.currentUserName }}
     </h4>
-    <button class="button" (click)="logout()">Logout</button>
+    <button class="button btn-block btn-round text-size" (click)="logout()">Logout</button>
+  </div>
 </div>
+

@@ -121,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularfire-em-pass-authentication"
+    }
+  },
+  "defaultProject": "angularfire-em-pass-authentication",
+  "cli": {
+    "analytics": false
+  }
 }
